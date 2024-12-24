@@ -25,7 +25,7 @@ Route::get('/user/{id}', function (string $id) { //userกับเลขID
 Route::get('/users/{user}', [UserController::class, 'show']);
 
 Route::get('/products', [ProductController::class, 'index'])->middleware(['auth', 'verified'])->name('products.index'); //เข้าที่หน้าindexของproductเเต่ผ่านmiddleware ก่อน
-Route::get('/products/{id}', [ProductController::class, 'show']); // /products ตามด้วย id ในเว็ป จะขึ้นเลข id ของ product
+Route::get('/products/{id}', [ProductController::class, 'show'])->middleware(['auth', 'verified'])->name('products.show'); // /products ตามด้วย id ในเว็ป จะขึ้นเลข id ของ product
 
 Route::get('/dashboard', function () { 
     return Inertia::render('Dashboard');

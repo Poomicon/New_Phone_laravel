@@ -8,7 +8,7 @@ export default function Show({ product }) {
             <p className="product-detail-description">{product.description}</p>
             <p className="product-detail-price">Price: ${product.price}</p>
             <Link href="/products" className="back-link">
-                Back to All Products
+                Back to All Phones
             </Link>
         </div>
     );

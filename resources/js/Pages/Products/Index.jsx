@@ -26,7 +26,7 @@ export default function Index({ auth, products }) {
                                     href={`/products/${product.id}`}
                                     className="mt-4 inline-block text-indigo-500 hover:text-indigo-700 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
                                 >
-                                    View Details 
+                                    View Phone Details
                                 </Link>
                             </div>
                         </div>
