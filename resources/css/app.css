@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@vite(['resources/css/app.css', 'resources/js/app.jsx', "resources/js/Pages/{$page['component']}"])
+
+/* เเตกเเต่ง css product */
+body {
+  font-family: 'Arial', sans-serif; /* กำหนดฟอนต์ของตัวอักษรให้เป็น Arial และสำรองด้วย sans-serif */
+  background-color: #f8f8f8; /* กำหนดสีพื้นหลังของหน้าเป็นสีเทาอ่อน */
+  color: #333; /* กำหนดสีของข้อความเป็นสีเทาเข้ม */
+  margin: 0; /* ลบระยะห่างด้านนอกทั้งหมดของหน้า */
+  padding: 0; /* ลบระยะห่างด้านในทั้งหมดของหน้า */
+  display: flex; /* ใช้ Flexbox ในการจัดองค์ประกอบ */
+  justify-content: center; /* จัดองค์ประกอบให้อยู่กึ่งกลางแนวนอน */
+  align-items: center; /* จัดองค์ประกอบให้อยู่กึ่งกลางแนวตั้ง */
+  height: 150vh; /* กำหนดความสูงของหน้าเต็มพื้นที่ viewport */
+}
+
+.product-container {
+  padding: 20px; /* เพิ่มระยะห่างภายในรอบ ๆ คอนเทนเนอร์ */
+  max-width: 1200px; /* กำหนดความกว้างสูงสุดของคอนเทนเนอร์ไม่เกิน 1200px */
+  margin: auto; /* จัดกึ่งกลางคอนเทนเนอร์ในหน้า */
+}
+
+.title {
+  text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+  font-size: 2.5rem; /* ขนาดตัวอักษรใหญ่ 2.5 เท่าของค่ามาตรฐาน */
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง 20px */
+  color:  #2b2b2a; /* สีของข้อความเป็นสีเทาเข้ม */
+}
+
+.product-grid {
+  display: grid; /* ใช้ Grid Layout สำหรับจัดองค์ประกอบ */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* กำหนดคอลัมน์ให้เป็นแบบปรับขนาดได้ */
+  gap: 20px; /* เพิ่มช่องว่างระหว่างคอลัมน์และแถว */
+}
+
+.product-card {
+  background-color: #fff; /* กำหนดพื้นหลังของการ์ดเป็นสีขาว */
+  border-radius: 8px; /* มุมของการ์ดโค้ง 8px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับการ์ด */
+  overflow: hidden; /* ซ่อนส่วนที่เกินออกมาจากการ์ด */
+  text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+  padding: 15px; /* เพิ่มระยะห่างภายใน 15px */
+  display: flex; /* ใช้ Flexbox ในการจัดองค์ประกอบภายใน */
+  flex-direction: column; /* จัดองค์ประกอบในแนวตั้ง */
+  align-items: center; /* จัดองค์ประกอบให้อยู่กึ่งกลาง */
+}
+
+.product-image {
+  width: 100%; /* กำหนดความกว้างของรูปให้เต็มพื้นที่การ์ด */
+  max-height: 200px; /* ความสูงสูงสุดของรูป 150px */
+  object-fit: cover; /* ปรับรูปให้แสดงเต็มพื้นที่โดยไม่บิดเบือน */
+  border-radius: 5px; /* มุมของรูปโค้ง 5px */
+  margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่าง 10px */
+}
+
+.product-name {
+  font-size: 1.4rem; /* ขนาดตัวอักษร 1.4 เท่าของค่ามาตรฐาน */
+  font-weight: bold; /* ตัวอักษรหนา */
+  margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่าง 10px */
+}
+
+.product-price {
+  font-size: 1.2rem; /* ขนาดตัวอักษร 1.2 เท่าของค่ามาตรฐาน */
+  color: #161616; /* สีของข้อความเป็นสีเทาเข้ม */
+  margin-bottom: 15px; /* เพิ่มระยะห่างด้านล่าง 15px */
+}
+
+.product-link {
+  display: inline-block; /* จัดลิงก์เป็นบล็อกแนวนอน */
+  padding: 10px 20px; /* เพิ่มระยะห่างภายใน 10px บนล่าง และ 20px ซ้ายขวา */
+  background-color: #3d94ec; /* สีพื้นหลังของลิงก์เป็นสีน้ำเงิน */
+  color: #fff; /* สีของข้อความในลิงก์เป็นสีขาว */
+  text-decoration: none; /* ลบเส้นใต้ของลิงก์ */
+  border-radius: 5px; /* มุมของลิงก์โค้ง 5px */
+  transition: background-color 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนสีพื้นหลัง */
+  
+}
+
+.product-link:hover {
+  background-color: #004d99; /* สีพื้นหลังเมื่อชี้เมาส์เป็นสีน้ำเงินเข้ม */
+}
+
+
+.back-link {
+  display: inline-block; /* จัดลิงก์เป็นบล็อกแนวนอน */
+  padding: 10px 20px; /* เพิ่มระยะห่างภายใน 10px บนล่าง และ 20px ซ้ายขวา */
+  background-color: #444; /* สีพื้นหลังของลิงก์กลับเป็นสีเทาเข้ม */
+  color: #fff; /* สีของข้อความในลิงก์เป็นสีขาว */
+  text-decoration: none; /* ลบเส้นใต้ของลิงก์ */
+  border-radius: 5px; /* มุมของลิงก์โค้ง 5px */
+  transition: background-color 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนสีพื้นหลัง */
+}
+
+.back-link:hover {
+  background-color: #222; /* สีพื้นหลังเมื่อชี้เมาส์เป็นสีดำ */
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  height: 130px; /* หรือคุณสามารถใช้ความสูงของ container ตามต้องการ */
+  display: grid;
+  padding-bottom: 5px;
+}
+
+.center-content-view{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #cff1ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Container styling */
+.product-detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Image styling */
+  .product-detail-image {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่ */
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Name styling */
+  .product-detail-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    font-family: "Playfair Display", serif; /* ตัวอักษรหรู */
+    margin-bottom: 10px;
+  }
+
+  /* Description styling */
+  .product-detail-description {
+    font-size: 1.2rem;
+    color: #555;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* Price styling */
+  .product-detail-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: gold;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+  }
+
+  /* Back link styling */
+  .back-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #282727;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-link:hover {
+    background-color: #58595a;
+  }
+
+
